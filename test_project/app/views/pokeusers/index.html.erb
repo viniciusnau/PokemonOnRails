@@ -1,1 +1,27 @@
-<h1>LOG IN OR CREATE A BRAND NEW POKEUSER!!!</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>LOG IN OR CREATE A NEW POKEUSER</h1>
+<h2>ALL POKEUSERS:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokeusers.each do |pokeuser| %>
+      <tr>
+        <td><%= pokeuser.name %></td>
+        <td><a href="/pokeusers/<%= pokeuser.id%>">Show</a></td>
+        <td><%= link_to 'Show', pokeuser %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pokeuser', new_pokeuser_path %>
