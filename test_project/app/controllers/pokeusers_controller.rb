@@ -55,7 +55,7 @@ class PokeusersController < ApplicationController
       end
   
       def pokeuser_params
-        params.require(:pokeuser).permit(:name, :email, :password)
+        params.require(:pokeuser).permit(:name, :email, :password, :password_confirmation)
       end
 end
   
